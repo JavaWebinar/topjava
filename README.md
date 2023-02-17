@@ -27,7 +27,6 @@ Maven/ Spring/ Security/ JPA(Hibernate)/ REST(Jackson)/ Bootstrap(CSS)/ jQuery +
 ####  09.10 Дедлайн подачи заявки на [дипломную программу](https://javaops.ru/view/register/diploma)
 ### 09.02: 2-е занятие
 - Разбор домашнего задания HW1 + Optional
-- Библиотека vs Фреймворк. Стандартные библиотеки Apache Commons, Guava
 - Слои приложения. Создание каркаса приложения
 - Обзор Spring Framework. Spring Context
 - Пояснения к HW2. Обработка Autowired
