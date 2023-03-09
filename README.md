@@ -15,7 +15,7 @@ Maven/ Spring/ Security/ JPA(Hibernate)/ REST(Jackson)/ Bootstrap(CSS)/ jQuery +
 
 ### 26.01: Старт проекта
 - Начало проверки [вступительного задания HW0](https://github.com/JavaOPs/topjava#-Домашнее-задание-hw0)
-
+- Основное в java8 [presentation](![img.png](img.png))
 #### 31.01 Дедлайн на сдачу HW0
 ### 02.02: 1-е занятие
 - Разбор домашнего задания вступительного занятия (вместе с Optional)
