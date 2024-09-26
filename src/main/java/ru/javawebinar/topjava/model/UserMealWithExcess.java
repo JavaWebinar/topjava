@@ -19,53 +19,9 @@ public class UserMealWithExcess {
         this.excess = excess;
     }
 
-    public LocalDateTime getDateTime() {
-        return dateTime;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public int getCalories() {
-        return calories;
-    }
-
-    public boolean isExceed() {
-        return excess;
-    }
-
-    @Override
-    public boolean equals(Object otherObject) {
-        // Проверка объектов на идентичность
-        if (this == otherObject) {
-            return true;
-        }
-        // Проверка явного параметра == null
-        if (otherObject == null) {
-            return false;
-        }
-        // Проверка совпадения классов
-        if (this.getClass() != otherObject.getClass()) {
-            return false;
-        }
-        // Приведение otherObject к типу текущего класа
-        UserMealWithExcess other = (UserMealWithExcess) otherObject;
-        // Проверка хранимых значений в свойствах объекта
-        return Objects.equals(dateTime, other.dateTime)
-                && Objects.equals(description, other.description)
-                && Objects.equals(calories, other.calories)
-                && Objects.equals(excess, other.excess);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(dateTime, description, calories, excess);
-    }
-
     @Override
     public String toString() {
-        return String.format("User [dateTime=%s, description=%s, calories=%s, excess=%s]",
+        return String.format("UserMealWithExcess [dateTime=%s, description=%s, calories=%s, excess=%s]",
                 dateTime, description, calories, excess
         );
     }

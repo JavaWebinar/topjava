@@ -21,50 +21,53 @@ public class UserMealsUtil {
                 new UserMeal(LocalDateTime.of(2020, Month.JANUARY, 31, 13, 0), "Обед", 500),
                 new UserMeal(LocalDateTime.of(2020, Month.JANUARY, 31, 20, 0), "Ужин", 410)
         );
-
         List<UserMealWithExcess> mealsTo = filteredByCycles(meals, LocalTime.of(7, 0), LocalTime.of(12, 0), 2000);
         mealsTo.forEach(System.out::println);
-
         System.out.println("==========================================================================================");
-
         List<UserMealWithExcess> mealsToStream = filteredByStreams(meals, LocalTime.of(7, 0), LocalTime.of(12, 0), 2000);
         mealsToStream.forEach(System.out::println);
     }
 
     public static List<UserMealWithExcess> filteredByCycles(List<UserMeal> meals, LocalTime startTime, LocalTime endTime, int caloriesPerDay) {
-        // TODO return filtered list with excess. Implement by cycles
-
-        // Суммируем калории по дате без времени
+        List<UserMeal> mealsOnTime = new ArrayList<>();
+        for (UserMeal meal : meals) {
+            LocalTime mealTime = meal.getDateTime().toLocalTime();
+            if (startTime.isBefore(mealTime) && endTime.isAfter(mealTime)) {
+                mealsOnTime.add(meal);
+            }
+        }
         Map<LocalDate, Integer> caloriesGroupByLocalDate = new HashMap<>();
-        for (UserMeal meal : meals) {
-            LocalDate currentLocalDate = meal.getDateTime().toLocalDate();
-            caloriesGroupByLocalDate.put(currentLocalDate, (caloriesGroupByLocalDate.getOrDefault(currentLocalDate, 0)) + meal.getCalories());
+        for (UserMeal meal : mealsOnTime) {
+            LocalDate dateMeal = meal.getDateTime().toLocalDate();
+            caloriesGroupByLocalDate.put(dateMeal, caloriesGroupByLocalDate.getOrDefault(dateMeal, 0) + meal.getCalories());
         }
-
-        // Проводим оценку и заполняем результат
         List<UserMealWithExcess> result = new ArrayList<>();
-        for (UserMeal meal : meals) {
-            int calories = caloriesGroupByLocalDate.get(meal.getDateTime().toLocalDate());
-            result.add(new UserMealWithExcess(meal.getDateTime(), meal.getDescription(), meal.getCalories(), calories > caloriesPerDay));
+        for (UserMeal meal : mealsOnTime) {
+            result.add(new UserMealWithExcess(
+                    meal.getDateTime(),
+                    meal.getDescription(),
+                    meal.getCalories(),
+                    caloriesGroupByLocalDate.get(meal.getDateTime().toLocalDate()) > caloriesPerDay)
+            );
         }
-
         return result;
     }
 
     public static List<UserMealWithExcess> filteredByStreams(List<UserMeal> meals, LocalTime startTime, LocalTime endTime, int caloriesPerDay) {
-        // TODO Implement by streams
-
-        // Суммируем калории по дате без времени
-        Map<LocalDate, Integer> caloriesGroupByLocalDate = meals.stream().collect(
-                Collectors.groupingBy(meal -> meal.getDateTime().toLocalDate(), Collectors.summingInt(UserMeal::getCalories))
-        );
-
-        // Проводим оценку и заполняем и возвращаем результат
-        return meals
-                .stream()
+        Map<LocalDate, Integer> caloriesGroupByLocalDate = meals.stream()
+                .collect(
+                        Collectors.groupingBy(meal -> meal.getDateTime().toLocalDate(), Collectors.summingInt(UserMeal::getCalories))
+                );
+        return meals.stream()
+                .filter(meal -> startTime.isBefore(meal.getDateTime().toLocalTime()) && endTime.isAfter(meal.getDateTime().toLocalTime()))
                 .map(meal ->
-                        new UserMealWithExcess(meal.getDateTime(), meal.getDescription(), meal.getCalories(), caloriesGroupByLocalDate.get(meal.getDateTime().toLocalDate()) > caloriesPerDay)
+                        new UserMealWithExcess(
+                                meal.getDateTime(),
+                                meal.getDescription(),
+                                meal.getCalories(),
+                                caloriesGroupByLocalDate.get(meal.getDateTime().toLocalDate()) > caloriesPerDay
+                        )
                 )
-                .toList();
+                .collect(Collectors.toList());
     }
 }

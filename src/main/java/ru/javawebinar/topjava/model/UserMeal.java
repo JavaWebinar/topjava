@@ -58,7 +58,7 @@ public class UserMeal {
 
     @Override
     public String toString() {
-        return String.format("User [dateTime=%s, description=%s, calories=%s]",
+        return String.format("UserMeal [dateTime=%s, description=%s, calories=%s]",
                 dateTime, description, calories
         );
     }
