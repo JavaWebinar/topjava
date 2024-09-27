@@ -30,33 +30,6 @@ public class UserMeal {
     }
 
     @Override
-    public boolean equals(Object otherObject) {
-        // Проверка объектов на идентичность
-        if (this == otherObject) {
-            return true;
-        }
-        // Проверка явного параметра == null
-        if (otherObject == null) {
-            return false;
-        }
-        // Проверка совпадения классов
-        if (this.getClass() != otherObject.getClass()) {
-            return false;
-        }
-        // Приведение otherObject к типу текущего класа
-        UserMeal other = (UserMeal) otherObject;
-        // Проверка хранимых значений в свойствах объекта
-        return Objects.equals(dateTime, other.dateTime)
-                && Objects.equals(description, other.description)
-                && Objects.equals(calories, other.calories);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(dateTime, description, calories);
-    }
-
-    @Override
     public String toString() {
         return String.format("UserMeal [dateTime=%s, description=%s, calories=%s]",
                 dateTime, description, calories
