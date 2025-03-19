@@ -10,15 +10,6 @@
 
 ---
 
-Ссылки на отчеты, которые будут использоваться в этом уроке:
-
-- [JVM Ecosystem Report 2021](https://snyk.io/jvm-ecosystem-report-2021/)
-- [Jetbrains Java Dev Ecosystem Report 2021](https://www.jetbrains.com/lp/devecosystem-2021/java/)
-- [JRebel 2021 Java Technology Repost](https://www.jrebel.com/blog/2021-java-technology-report)
-- [Top 5 Java ORM tools - 2022](https://www.knowledgefactory.net/2021/09/top-java-orm-tools-20XX.html)
-
----
-
 ### Языки программирования
 
 #### 1. Java
