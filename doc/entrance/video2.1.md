@@ -10,6 +10,13 @@
 
 ---
 
+Ссылки на последние отчеты:
+
+- [Jetbrains Java Report](https://www.jetbrains.com/lp/devecosystem-2023/java/)
+- [JRebel 2024 Java Technology Repost](https://www.jrebel.com/blog/2024-java-report-highlights)
+
+---
+
 ### Языки программирования
 
 #### 1. Java
