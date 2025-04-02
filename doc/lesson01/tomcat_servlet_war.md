@@ -19,7 +19,7 @@
 
 При [передаче разработки](https://www.opennet.ru/opennews/art.shtml?num=51477) Java EE от Oracle проекту Eclipse она стала называться Jakarta и пакеты с реализацией спецификаций _javax_ были переименованы в _jakarta_.
 Поэтому при работе с сервлетами (равно как и с другими EE спецификациями) важно выбирать совместимые версии фреймворков. Мы начнем работать с реализацией Java EE (пакетом _javax_), это 
-[9.x версия Tomcat](https://tomcat.apache.org/download-90.cgi), Spring 5.x, Hibernate 5.6.x, Hibernate Validator 6.x. При миграции в конце стажировки на Spring Boot 3.0 автоматически подтянутся новые зависимости Jakarta EE:
+[9.x версия Tomcat](https://tomcat.apache.org/download-90.cgi), Spring 5.x, Hibernate 5.6.x, Hibernate Validator 6.x. При миграции в конце стажировки на Spring Boot 3.x автоматически подтянутся новые зависимости Jakarta EE:
 встроенный Tomcat 10.x, Spring 6.x и [Hibernate Validator 8.x](https://hibernate.org/validator/releases/).   
 
 Дополнительно: 
