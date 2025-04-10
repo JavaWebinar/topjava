@@ -136,13 +136,18 @@ GRANT ALL PRIVILEGES ON DATABASE topjava TO "user";
 [Docker - понятный туториал](https://badtry.net/docker-tutorial-dlia-novichkov-rassmatrivaiem-docker-tak-iesli-by-on-byl-ighrovoi-pristavkoi/)
 
 #### Для разных ОС установка Docker отличается.  Для Windows часто это достаточно заморочно, возможно лучший вариант - [собственный UNIX хостинг](https://github.com/JavaOPs/startup). Он также пригодиться для практики с терминалом Linux и для деплоя приложения в конце стажировки.
-- для [Windows без поддержки Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements) требуется Docker Toolbox,
-для Windows 10 Pro and Enterprise - Docker Desktop. [Инструкция по проверке виртуализации и установке](https://devconnected.com/how-to-install-docker-on-windows-7-8-10-home-and-pro/)
-- На Windows Home можно поставить Docker Desktop, предварительно [установив WSL2 (Windows Subsystem for Linux)](https://docs.microsoft.com/ru-ru/windows/wsl/install)
-  - Убедитесь, что wsl версии 2: возможно понадобится включить в BIOS виртуализацию (гуглится по материнской плате) и [отключить в Windows гипервизор](https://sysadmintips.ru/kak-vykljuchit-virtualizaciju-hyper-v-windows-10.html#Otklucenie_Hyper-V_v_Windows_10_cerez_Programmy_i_komponenty)
-  - [Upgrade version from WSL 1 to WSL 2](https://docs.microsoft.com/en-us/windows/wsl/install#upgrade-version-from-wsl-1-to-wsl-2)
-  - [Обновление WSL до версии 2](https://docs.microsoft.com/en-us/windows/wsl/install-manual)
-  - Команды из cmd/PoswrShell:
+- [Установка на Mac](https://docs.docker.com/desktop/install/mac-install/)
+- [Установка на Linux](https://docs.docker.com/desktop/install/linux-install/)
+- Установка под Ubuntu: ` sudo apt install docker.io`
+  - [How can I use docker without sudo?](https://askubuntu.com/a/477554/1357134)
+- Для Windows 10 Pro and Enterprise просто [скачать и запустить Docker Desktop](https://docs.docker.com/desktop/setup/install/windows-install/) и проверить версию версию Docker из `cmd/powershell`:
+> docker version
+  - В случае проблем нужно дополнительные настройки: [инструкция по проверке виртуализации и установке](https://devconnected.com/how-to-install-docker-on-windows-7-8-10-home-and-pro/)
+  - На Windows Home можно поставить Docker Desktop, предварительно [установив WSL2 (Windows Subsystem for Linux)](https://docs.microsoft.com/ru-ru/windows/wsl/install)
+    - Убедитесь, что wsl версии 2: возможно понадобится включить в BIOS виртуализацию (гуглится по материнской плате) и [отключить в Windows гипервизор](https://sysadmintips.ru/kak-vykljuchit-virtualizaciju-hyper-v-windows-10.html#Otklucenie_Hyper-V_v_Windows_10_cerez_Programmy_i_komponenty)
+    - [Upgrade version from WSL 1 to WSL 2](https://docs.microsoft.com/en-us/windows/wsl/install#upgrade-version-from-wsl-1-to-wsl-2)
+    - [Обновление WSL до версии 2](https://docs.microsoft.com/en-us/windows/wsl/install-manual)
+    - Команды из `cmd/powershell`:
 ```
 wsl -l -v : проверить версию
 wsl --set-version Ubuntu-20.04 2  : поставить версию 2
@@ -152,19 +157,14 @@ sudo service docker status <- проверка статуса
 sudo service docker start  <-старт
 sudo service docker restart <-рестарт
 ```   
-- [Установка на Mac](https://docs.docker.com/desktop/install/mac-install/)
-- [Установка на Linux](https://docs.docker.com/desktop/install/linux-install/)
-- Установка под Ubuntu: ` sudo apt install docker.io`
-  - [How can I use docker without sudo?](https://askubuntu.com/a/477554/1357134)
-  
-#### Работе Docker могут мешать: DrWeb, firewall, анитивирусы
-
 После установки у меня не запускался `Docker Quickstart Terminal`, я запустил Docker Toolbox из `Git Bash`:
 - Запустил Git Bash
 - Перешел в каталог С:\...\DockerToolbox: `cd /C/../DockerToolbox`
-- Запустил `start.sh` 
+- Запустил `start.sh`
+  
+#### Работе Docker могут мешать: DrWeb, firewall, анитивирусы
 
-#### Разворачиваем Postgres:
+### Разворачиваем Postgres:
 - загружаем [контейнер с последним postgres](https://hub.docker.com/_/postgres): `docker pull postgres`
 - если на локальной машине уже запущен сервис postgres, надо его остановить: для Windows я запустил `C:\Windows\System32\cmd.exe as Admin` и остановил командой `net stop postgresql-x64-10`
 - запускаем контейнер с postgres: `docker run -p 5432:5432 -d --name topjava_db -e POSTGRES_USER=user -e POSTGRES_PASSWORD=password -e POSTGRES_DB=topjava postgres`   
