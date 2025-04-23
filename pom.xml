@@ -20,6 +20,7 @@
         <spring-data-jpa.version>2.7.18</spring-data-jpa.version>
         <jackson.version>2.18.3</jackson.version>
         <tomcat.version>9.0.100</tomcat.version>
+        <jsoup.version>1.19.1</jsoup.version>
 
         <!-- Hibernate -->
         <hibernate.version>5.6.15.Final</hibernate.version>
@@ -184,15 +185,17 @@
             <artifactId>hibernate-core</artifactId>
             <version>${hibernate.version}</version>
         </dependency>
+
+        <!--    Validation-->
         <dependency>
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator</artifactId>
             <version>${hibernate-validator.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-jcache</artifactId>
-            <version>${hibernate.version}</version>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>${jsoup.version}</version>
         </dependency>
 
         <!--http://hibernate.org/validator/documentation/getting-started/#unified-expression-language-el-->
@@ -204,6 +207,11 @@
         </dependency>
 
         <!-- Cache -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-jcache</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
         <dependency>
             <groupId>javax.cache</groupId>
             <artifactId>cache-api</artifactId>
