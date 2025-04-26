@@ -10,9 +10,9 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import ru.javaops.topjava.app.AuthUser;
-import ru.javaops.topjava.user.UsersUtil;
 import ru.javaops.topjava.user.model.User;
 import ru.javaops.topjava.user.to.UserTo;
+import ru.javaops.topjava.user.util.UsersUtil;
 
 import java.net.URI;
 
@@ -57,5 +57,10 @@ public class ProfileController extends AbstractUserController {
         assureIdConsistent(userTo, authUser.id());
         User user = authUser.getUser();
         repository.prepareAndSave(UsersUtil.updateFromTo(user, userTo));
+    }
+
+    @GetMapping("/with-meals")
+    public ResponseEntity<User> getWithMeals(@AuthenticationPrincipal AuthUser authUser) {
+        return super.getWithMeals(authUser.id());
     }
 }
