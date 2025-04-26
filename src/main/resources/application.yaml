@@ -1,0 +1,56 @@
+#  https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+spring:
+  jpa:
+    show-sql: true
+    open-in-view: false
+    # https://stackoverflow.com/a/67678945/548473
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      #  http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#configurations
+      hibernate:
+        format_sql: true
+        default_batch_fetch_size: 20
+        # https://stackoverflow.com/questions/21257819/what-is-the-difference-between-hibernate-jdbc-fetch-size-and-hibernate-jdbc-batc
+        jdbc.batch_size: 20
+  datasource:
+    # ImMemory
+    url: jdbc:h2:mem:topjava
+    #    tcp: jdbc:h2:tcp://localhost:9092/mem:topjava
+    # Absolute path
+    #    url: jdbc:h2:C:/projects/bootjava/db/topjava
+    #    tcp: jdbc:h2:tcp://localhost:9092/C:/projects/bootjava/db/topjava
+    # Relative path form current dir
+    #    url: jdbc:h2:./db/topjava
+    # Relative path from home
+    #    url: jdbc:h2:~/topjava
+    #    tcp: jdbc:h2:tcp://localhost:9092/~/topjava
+    username: sa
+    password:
+
+  # Jackson Serialization Issue Resolver
+  jackson.visibility:
+    field: any
+    getter: none
+    setter: none
+    is-getter: none
+
+  # https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#common-application-properties-cache
+  cache:
+#    cache-names: users
+#    caffeine.spec: maximumSize=5000,expireAfterAccess=60s
+
+logging:
+  level:
+    root: WARN
+    ru.javaops.topjava: DEBUG
+    org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver: DEBUG
+
+server.servlet:
+  encoding:
+    charset: UTF-8 # Charset of HTTP requests and responses. Added to the "Content-Type" header if not set explicitly
+    enabled: true # Enable http encoding support
+    force: true
+
+springdoc.swagger-ui.path: /
