@@ -5,7 +5,7 @@
 ## ![hw](https://cloud.githubusercontent.com/assets/13649199/13672935/ef09ec1e-e6e7-11e5-9f79-d1641c05cbe6.png) Правки проекта:
 #### Apply 10_0_fix_js.patch
 В патче `9_08_js_i18n` в js строку были "встроены переменные" ([String Interpolation in JavaScript](https://www.geeksforgeeks.org/javascript/string-interpolation-in-javascript/)).  
-Но вместо обратного слеша (backtick, "`") в коде были обычные кавычки, там интерполяция не работает.   
+Но вместо обратного слеша (backtick, "`") в коде были обычные кавычки, интерполяция не работала.   
 
 ## ![hw](https://cloud.githubusercontent.com/assets/13649199/13672719/09593080-e6e7-11e5-81d1-5cb629c438ca.png) Разбор домашнего задания HW9
 
