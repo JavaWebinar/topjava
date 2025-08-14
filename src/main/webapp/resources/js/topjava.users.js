@@ -41,7 +41,7 @@ $(function () {
                     "data": "email",
                     "render": function (data, type, row) {
                         if (type === "display") {
-                            return "<a href='mailto:${data}'>${data}</a>";
+                            return `<a href="mailto:${data}">${data}</a>`;
                         }
                         return data;
                     }
@@ -53,7 +53,7 @@ $(function () {
                     "data": "enabled",
                     "render": function (data, type, row) {
                         if (type === "display") {
-                            return "<input type='checkbox' ${data ? 'checked' : ''} onclick='enable($(this),${row.id});'/>";
+                            return `<input type='checkbox' ${data ? 'checked' : ''} onclick='enable($(this),${row.id});'/>`;
                         }
                         return data;
                     }
