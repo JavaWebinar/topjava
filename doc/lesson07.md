@@ -347,7 +347,7 @@ JUnit предоставляет нам набор коллбэков — инт
 
 #### Принципы REST, REST-контроллеры
 
-> [REST](http://spring-projects.ru/understanding/rest/) - архитектурный стиль проектирования распределенных систем (типа клиент-сервер).
+> [REST](https://web.archive.org/web/20240919203427/http://spring-projects.ru/understanding/rest/) - архитектурный стиль проектирования распределенных систем (типа клиент-сервер).
 
 Чаще всего в REST сервер и клиент общаются посредством обмена JSON-объектами через HTTP-методы GET/POST/PUT/DELETE/PATCH.  
 Особенностью REST является отсутствие состояния (контекста) взаимодействий клиента и сервера.
@@ -394,7 +394,7 @@ JSON...
 
 > - Переделал URL поиска по email на `/by-email`
 
-- <a href="http://spring-projects.ru/understanding/rest/">Понимание REST</a>
+- <a href="">Понимание REST</a>
 - <a href="https://ru.wikipedia.org/wiki/JSON">JSON (JavaScript Object Notation)</a>
 - [15 тривиальных фактов о правильной работе с протоколом HTTP](https://habrahabr.ru/company/yandex/blog/265569/)
 - [10 Best Practices for Better RESTful](https://medium.com/@mwaysolutions/10-best-practices-for-better-restful-api-cbe81b06f291)
