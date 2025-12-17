@@ -1,4 +1,5 @@
-package ru.javawebinar.topjava.util;
+package ru.javawebinar.topjava.util.validation;
+
 import org.slf4j.Logger;
 import org.springframework.core.NestedExceptionUtils;
 import org.springframework.lang.NonNull;
