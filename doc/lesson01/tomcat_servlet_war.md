@@ -111,7 +111,7 @@
 
 Браузер по этому перенаправлению меняет свой url и выполняет новых запрос _/topjava/users.jsp_.  
 
-### Попробуйте подебажить приложение: поставить брекпойнт в [IDEA в коде сервлета](http://info.javarush.ru/idea_help/2014/01/22/Руководство-пользователя-IntelliJ-IDEA-Отладчик-.html) и в JPS:
+### Попробуйте подебажить приложение: поставить брекпойнт в [IDEA в коде сервлета](https://javarush.com/quests/lectures/questsyntaxpro.level20.lecture04) и в JSP:
 
 ![debug_jsp](https://user-images.githubusercontent.com/11200258/216207167-92936706-7c41-4a36-8e29-6fb4e846def9.png)
 
