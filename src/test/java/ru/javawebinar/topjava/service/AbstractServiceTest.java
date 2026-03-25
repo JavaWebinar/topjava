@@ -31,16 +31,8 @@ public abstract class AbstractServiceTest {
     @ClassRule
     public static ExternalResource summary = TimingRules.SUMMARY;
 
-    @Autowired
-    private Environment env;
-
     @Rule
     public Stopwatch stopwatch = TimingRules.STOPWATCH;
-
-    public boolean isJpaBased() {
-//        return Arrays.stream(env.getActiveProfiles()).noneMatch(Profiles.JDBC::equals);
-        return env.acceptsProfiles(org.springframework.core.env.Profiles.of(Profiles.JPA, Profiles.DATAJPA));
-    }
 
     //  Check root cause with AssertJ: https://github.com/junit-team/junit-framework/issues/2129#issuecomment-565712630
     protected <T extends Throwable> void validateRootCause(Class<T> rootExceptionClass, Runnable runnable) {
