@@ -1,6 +1,8 @@
 package ru.javawebinar.topjava.util;
 
+import org.springframework.core.NestedExceptionUtils;
 import org.springframework.http.ResponseEntity;
+import org.springframework.lang.NonNull;
 import org.springframework.validation.BindingResult;
 import ru.javawebinar.topjava.HasId;
 import ru.javawebinar.topjava.util.exception.NotFoundException;
@@ -64,6 +66,13 @@ public class ValidationUtil {
         } else if (bean.id() != id) {
             throw new IllegalArgumentException(bean + " must be with id=" + id);
         }
+    }
+
+    //  https://stackoverflow.com/a/65442410/548473
+    @NonNull
+    public static Throwable getRootCause(@NonNull Throwable t) {
+        Throwable rootCause = NestedExceptionUtils.getRootCause(t);
+        return rootCause != null ? rootCause : t;
     }
 
     public static ResponseEntity<String> getErrorResponse(BindingResult result) {
