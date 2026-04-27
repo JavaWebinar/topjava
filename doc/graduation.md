@@ -4,8 +4,9 @@
 - Ревью проекта входит в участие с проверкой домашних заданий. Проверяется два раза: один раз ассистентами и после ваших правок - финальная проверка, Кислиным Григорием. 
 - Ревью выпускного делается только у участников с проверкой ДЗ. У кого оплачен Диплом, но нет проверки - даю краткие итоги.
 - **Ревью выпускного можно оплатить отдельно как [техническое собеседование](https://javaops.ru/auth/payonline?payId=I)**
-- Участникам проекта [Многомодульный maven. Многопоточность. XML (JAXB/StAX). Веб сервисы (JAX-RS/SOAP). Удаленное взаимодействие (JMS/AKKA) (Masterjava)](http://javaops.ru/reg/masterjava) срок ревью выпускного до
-  11 августа 2026 г.
+- Участникам проекта «Многомодульный Maven, многопоточность, JavaEE» ([Masterjava](http://javaops.ru/reg/masterjava)) и
+  «Микросервисы, Kafka, Docker, Spring Cloud, реактивный стек» ([CloudJava](https://javaops.ru/view/cloudjava)) 
+или «Деплой микросервисов в Kubernetes. Helm» ([CloudJava2](https://javaops.ru/view/cloudjava2)) срок ревью выпускного до 11 августа 2026 г.
 
 ##  Technical requirement: 
 Design and implement a REST API using Hibernate/Spring/SpringMVC (Spring-Boot preferred!) **without frontend**.
