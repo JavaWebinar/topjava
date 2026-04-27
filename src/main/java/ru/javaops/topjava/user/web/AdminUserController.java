@@ -28,6 +28,11 @@ public class AdminUserController extends AbstractUserController {
         return super.get(id);
     }
 
+    @GetMapping("/{id}/with-meals")
+    public ResponseEntity<User> getWithMeals(@PathVariable int id) {
+        return super.getWithMeals(id);
+    }
+
     @Override
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)

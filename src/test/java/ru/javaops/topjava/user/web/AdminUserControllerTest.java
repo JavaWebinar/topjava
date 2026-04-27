@@ -149,8 +149,18 @@ class AdminUserControllerTest extends AbstractControllerTest {
 
     @Test
     @WithUserDetails(value = ADMIN_MAIL)
+    void getWithMeals() throws Exception {
+        perform(MockMvcRequestBuilders.get(REST_URL_SLASH + ADMIN_ID + "/with-meals"))
+                .andExpect(status().isOk())
+                .andDo(print())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+                .andExpect(USER_WITH_MEALS_MATCHER.contentJson(admin));
+    }
+
+    @Test
+    @WithUserDetails(value = ADMIN_MAIL)
     void createInvalid() throws Exception {
-        User invalid = new User(null, null, "", "newPass", Role.USER, Role.ADMIN);
+        User invalid = new User(null, null, "", "newPass", 7300, Role.USER, Role.ADMIN);
         perform(MockMvcRequestBuilders.post(REST_URL)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(jsonWithPassword(invalid, "newPass")))
@@ -198,7 +208,7 @@ class AdminUserControllerTest extends AbstractControllerTest {
     @Test
     @WithUserDetails(value = ADMIN_MAIL)
     void createDuplicate() throws Exception {
-        User expected = new User(null, "New", USER_MAIL, "newPass", Role.USER, Role.ADMIN);
+        User expected = new User(null, "New", USER_MAIL, "newPass", 2300, Role.USER, Role.ADMIN);
         perform(MockMvcRequestBuilders.post(REST_URL)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(jsonWithPassword(expected, "newPass")))

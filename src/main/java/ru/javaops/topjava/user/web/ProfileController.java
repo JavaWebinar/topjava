@@ -58,4 +58,9 @@ public class ProfileController extends AbstractUserController {
         User user = authUser.getUser();
         repository.prepareAndSave(UsersUtil.updateFromTo(user, userTo));
     }
+
+    @GetMapping("/with-meals")
+    public ResponseEntity<User> getWithMeals(@AuthenticationPrincipal AuthUser authUser) {
+        return super.getWithMeals(authUser.id());
+    }
 }
