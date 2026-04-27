@@ -13,14 +13,14 @@ Maven/ Spring/ Security/ JPA(Hibernate)/ REST(Jackson)/ Bootstrap(CSS)/ jQuery +
 
 ### Миграция TopJava на Spring-Boot
 
-Финальный код проекта BootJava с миграцией на Spring Boot 3.5
+Финальный код проекта BootJava с миграцией на Spring Boot 4.0
 Вычекайте в отдельную папку (как отдельный проект) ветку `spring_boot` нашего проекта (так удобнее, не придется постоянно переключаться между ветками):
 ```
 git clone --branch spring_boot --single-branch https://github.com/JavaWebinar/topjava.git topjava_boot
 ```  
 -------------------------------------------------------------
 
-- Stack: [JDK 25](http://jdk.java.net/25/), Spring Boot 3.5, Lombok, H2, Caffeine Cache, Swagger/OpenAPI 3.0
+- Stack: [JDK 25](http://jdk.java.net/25/), Spring Boot 4.0, Lombok, H2, Caffeine Cache, Swagger/OpenAPI 3.0
 - Run: `mvn spring-boot:run` in root directory.
 -----------------------------------------------------
 [REST API documentation](http://localhost:8080/)  

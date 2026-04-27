@@ -1,11 +1,9 @@
 package ru.javaops.topjava.app.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.hibernate6.Hibernate6Module;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
 import lombok.extern.slf4j.Slf4j;
 import org.h2.tools.Server;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +11,9 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.http.ProblemDetail;
 import org.springframework.http.converter.json.ProblemDetailJacksonMixin;
 import ru.javaops.topjava.common.util.JsonUtil;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.json.JsonMapper;
+import tools.jackson.datatype.hibernate7.Hibernate7Module;
 
 import java.sql.SQLException;
 
@@ -36,11 +37,21 @@ public class AppConfig {
     interface MixIn extends ProblemDetailJacksonMixin {
     }
 
-    @Autowired
-    void configureAndStoreObjectMapper(ObjectMapper objectMapper) {
-        objectMapper.registerModule(new Hibernate6Module());
-        // ErrorHandling: https://stackoverflow.com/questions/7421474/548473
-        objectMapper.addMixIn(ProblemDetail.class, MixIn.class);
-        JsonUtil.setMapper(objectMapper);
+    //    https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#upgrading-jackson
+    @Bean
+    ObjectMapper objectMapper() {
+        ObjectMapper mapper = JsonMapper.builder()
+                .changeDefaultVisibility(visibilityChecker -> visibilityChecker
+                        .withVisibility(PropertyAccessor.FIELD, ANY)
+                        .withVisibility(PropertyAccessor.GETTER, NONE)
+                        .withVisibility(PropertyAccessor.SETTER, NONE)
+                        .withVisibility(PropertyAccessor.IS_GETTER, NONE)
+                )
+                .addModule(new Hibernate7Module())
+                // ErrorHandling: https://stackoverflow.com/questions/7421474/548473
+                .addMixIn(ProblemDetail.class, MixIn.class)
+                .build();
+        JsonUtil.setMapper(mapper);
+        return mapper;
     }
 }

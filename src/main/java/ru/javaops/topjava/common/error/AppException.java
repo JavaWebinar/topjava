@@ -1,7 +1,7 @@
 package ru.javaops.topjava.common.error;
 
 import lombok.Getter;
-import org.springframework.lang.NonNull;
+import org.jspecify.annotations.NonNull;
 
 public class AppException extends RuntimeException {
     @Getter

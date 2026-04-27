@@ -1,12 +1,11 @@
 package ru.javaops.topjava.common.util;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectReader;
 import lombok.experimental.UtilityClass;
+import tools.jackson.core.JacksonException;
+import tools.jackson.core.type.TypeReference;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectReader;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -22,7 +21,7 @@ public class JsonUtil {
         ObjectReader reader = mapper.readerFor(clazz);
         try {
             return reader.<T>readValues(json).readAll();
-        } catch (IOException e) {
+        } catch (JacksonException e) {
             throw new IllegalArgumentException("Invalid read array from JSON:\n'" + json + "'", e);
         }
     }
@@ -30,7 +29,7 @@ public class JsonUtil {
     public static <T> T readValue(String json, Class<T> clazz) {
         try {
             return mapper.readValue(json, clazz);
-        } catch (IOException e) {
+        } catch (JacksonException e) {
             throw new IllegalArgumentException("Invalid read from JSON:\n'" + json + "'", e);
         }
     }
@@ -38,7 +37,7 @@ public class JsonUtil {
     public static <T> String writeValue(T obj) {
         try {
             return mapper.writeValueAsString(obj);
-        } catch (JsonProcessingException e) {
+        } catch (JacksonException e) {
             throw new IllegalStateException("Invalid write to JSON:\n'" + obj + "'", e);
         }
     }
