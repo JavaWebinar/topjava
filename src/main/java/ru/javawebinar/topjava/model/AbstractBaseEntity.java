@@ -1,5 +1,6 @@
 package ru.javawebinar.topjava.model;
 
+import io.swagger.annotations.ApiModelProperty;
 import ru.javawebinar.topjava.HasId;
 
 import javax.persistence.*;
@@ -19,6 +20,7 @@ public abstract class AbstractBaseEntity implements HasId {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "global_seq")
 //  See https://hibernate.atlassian.net/browse/HHH-3718 and https://hibernate.atlassian.net/browse/HHH-12034
 //  Proxy initialization when accessing its identifier managed now by JPA_PROXY_COMPLIANCE setting
+    @ApiModelProperty(hidden = true)
     protected Integer id;
 
     protected AbstractBaseEntity() {
