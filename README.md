@@ -11,11 +11,10 @@ Maven/ Spring/ Security/ JPA(Hibernate)/ REST(Jackson)/ Bootstrap(CSS)/ jQuery +
 - [Wiki IDEA](https://github.com/JavaOPs/topjava/wiki/IDEA)
 - [Демо разрабатываемого приложения](http://javaops-demo.ru/topjava)
 
-### 29.01: Старт проекта
+### Старт проекта
 - Начало проверки [вступительного задания HW0](https://github.com/JavaOPs/topjava#-Домашнее-задание-hw0)
 
-#### 02.02 Дедлайн на сдачу HW0
-### 05.02: 1-е занятие
+### 1-е занятие
 - Разбор домашнего задания вступительного занятия (вместе с Optional)
 - Обзор используемых в проекте технологий. Интеграция ПО
 - Maven
@@ -24,7 +23,7 @@ Maven/ Spring/ Security/ JPA(Hibernate)/ REST(Jackson)/ Bootstrap(CSS)/ jQuery +
 - Уровни и зависимости логгирования. JMX
 - Домашнее задание 1-го занятия (HW1 + Optional)
 
-### 12.02: 2-е занятие
+### 2-е занятие
 - Разбор домашнего задания HW1 + Optional
 - Библиотека vs Фреймворк. Стандартные библиотеки Apache Commons, Guava
 - Слои приложения. Создание каркаса приложения
@@ -32,7 +31,7 @@ Maven/ Spring/ Security/ JPA(Hibernate)/ REST(Jackson)/ Bootstrap(CSS)/ jQuery +
 - Пояснения к HW2. Обработка Autowired
 - Домашнее задание (HW2 + Optional)
 
-### 19.02: 3-е занятие
+### 3-е занятие
 - Разбор домашнего задания HW2 + Optional
 - Жизненный цикл Spring контекста
 - Тестирование через JUnit
@@ -45,7 +44,7 @@ Maven/ Spring/ Security/ JPA(Hibernate)/ REST(Jackson)/ Bootstrap(CSS)/ jQuery +
 - Логирование тестов
 - Домашнее задание (HW3 + Optional)
 
-### 26.02: 4-е занятие
+### 4-е занятие
 - Разбор домашнего задания HW3 + Optional
 - Методы улучшения качества кода
 - Spring: инициализация и популирование DB
@@ -55,7 +54,7 @@ Maven/ Spring/ Security/ JPA(Hibernate)/ REST(Jackson)/ Bootstrap(CSS)/ jQuery +
 - Домашнее задание (HW4 + Optional)
 #### Начало выполнения [выпускного проекта](https://github.com/JavaOPs/topjava/blob/master/graduation.md)
 
-### 05.03: 5-е занятие
+### 5-е занятие
 - Обзор JDK 9/17. Миграция Topjava с 1.8 на 17
 - Разбор вопросов
 - Разбор домашнего задания HW4 + Optional
@@ -66,7 +65,7 @@ Maven/ Spring/ Security/ JPA(Hibernate)/ REST(Jackson)/ Bootstrap(CSS)/ jQuery +
 - Spring кэш
 - Домашнее задание (HW5 + Optional)
 
-### 12.03: 6-е занятие
+### 6-е занятие
 - Разбор домашнего задания HW5 + Optional
 - Кэш Hibernate
 - Spring Web
@@ -77,9 +76,9 @@ Maven/ Spring/ Security/ JPA(Hibernate)/ REST(Jackson)/ Bootstrap(CSS)/ jQuery +
 - Spring Internationalization
 - Домашнее задание (HW6 + Optional)
 
-#### Большое ДЗ + выпускной проект + начинаем [курс BootJava](https://javaops.ru/view/bootjava) + подтягиваем "хвосты".
+#### Начинаем [курс BootJava](https://javaops.ru/view/bootjava)
 
-### 26.03: 7-е занятие
+### 7-е занятие
 - Разбор домашнего задания HW6 + Optional
 - Автогенерация DDL по модели
 - Тестирование Spring MVC
@@ -90,7 +89,7 @@ Maven/ Spring/ Security/ JPA(Hibernate)/ REST(Jackson)/ Bootstrap(CSS)/ jQuery +
 - Тестирование через SoapUi. UTF-8
 - Домашнее задание (HW7 + Optional)
 
-### 02.04: 8-е занятие
+### 8-е занятие
 - Разбор домашнего задания HW7 + Optional
 - WebJars. jQuery и JavaScript frameworks
 - Bootstrap
@@ -99,7 +98,7 @@ Maven/ Spring/ Security/ JPA(Hibernate)/ REST(Jackson)/ Bootstrap(CSS)/ jQuery +
 - Добавление Spring Security
 - Домашнее задание (HW8 + Optional)
 
-### 09.04: 9-е занятие
+### 9-е занятие
 - Разбор домашнего задания HW8 + Optional
 - Spring Binding
 - Spring Validation
@@ -111,7 +110,7 @@ Maven/ Spring/ Security/ JPA(Hibernate)/ REST(Jackson)/ Bootstrap(CSS)/ jQuery +
 - Cookie. Session
 - Домашнее задание (HW9 + Optional)
 
-### 16.04: 10-е занятие
+### 10-е занятие
 - Разбор домашнего задания HW10 + Optional
 - Кастомизация JSON (@JsonView) и валидации (groups)
 - Рефакторинг: jQuery конверторы и группы валидации по умолчанию
@@ -124,7 +123,7 @@ Maven/ Spring/ Security/ JPA(Hibernate)/ REST(Jackson)/ Bootstrap(CSS)/ jQuery +
 - Защита от межсайтовой подделки запросов (CSRF)
 - Домашнее задание (HW10)
 
-### 23.04: 11-е занятие
+### 11-е занятие
 - Разбор домашнего задания HW10 + Optional
 - Локализация datatables, ошибок валидации
 - Защита от XSS (Cross Site Scripting)
@@ -135,11 +134,17 @@ Maven/ Spring/ Security/ JPA(Hibernate)/ REST(Jackson)/ Bootstrap(CSS)/ jQuery +
 - Домашнее задание (HW11): сокрытия полей в Swagger
 - Составление резюме. Собеседование. Разработка ПО. Возможные доработки приложения
  
-### 27.04: Миграция на Spring-Boot 3.5
+### Миграция на Spring-Boot 4.0
 - Ревью вашего резюме
 - Основы Spring Boot. Spring Boot maven plugin
 - Lombok, база H2, ApplicationRunner
 - Spring Data REST + HATEOAS
-- Миграция приложения подсчета калорий на Spring Boot
+- Миграция приложения на Spring Boot 3.x и 4.0
 
-### 11.05: Дедлайн на сдачу [выпускного проекта](https://github.com/JavaOPs/topjava/blob/master/graduation.md)
+### Сдача [выпускного проекта](https://github.com/JavaOPs/topjava/blob/master/graduation.md)
+Финальный срок сдачи [есть в профиле](https://javaops.ru/auth/profile#topjava): 4 месяца с начала обучения.   
+После его окончания можно будет из профиля продлить обучение на
+- 2 недели: 3250 руб.
+- 1 месяца: 4500 руб.
+- 2 месяца: 5850 руб
+- 3 месяца: 6950 руб. 
