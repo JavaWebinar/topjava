@@ -83,7 +83,7 @@
   - [Тестирование кода Java с помощью фреймворка JUnit](https://www.youtube.com/watch?v=z9jEVLCF5_w) (youtube)
 
 #### Apply 3_09_add_junit.patch
-**Внимание: после патча убедитесь, что все тестовые классы попали в каталог `/src/tets`**
+**Внимание: после патча убедитесь, что все тестовые классы попали в каталог `/src/test`**
 ### После патча сделайте `clean` и [обновите зависимости Maven](https://github.com/JavaOPs/topjava/wiki/IDEA#maven_update), чтобы IDEA определила сорсы тестов
 #### ![question](https://cloud.githubusercontent.com/assets/13649199/13672858/9cd58692-e6e7-11e5-905d-c295d2a456f1.png) Вопрос: почему проект упадет при попытке открыть страничку еды? (в логе смотреть самый верх самого нижнего исключения). Чинить приложение будем в HW03.
 
@@ -93,7 +93,7 @@
 -  [Spring Testing](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html)
 
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 8. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFVlNYczhnSU9JdXc">Базы данных. Обзор NoSQL и Java persistence solution без ORM.</a>
-### Postgres можно установить локально и/или через Docker - пригодиться!
+### Postgres можно установить локально и/или через Docker - пригодится!
 
 --------------
 ### Установка локально:
